@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Roles;
+use App\Entity\Rapporten;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Roles|null find($id, $lockMode = null, $lockVersion = null)
- * @method Roles|null findOneBy(array $criteria, array $orderBy = null)
- * @method Roles[]    findAll()
- * @method Roles[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Rapporten|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Rapporten|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Rapporten[]    findAll()
+ * @method Rapporten[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class RolesRepository extends ServiceEntityRepository
+class RapportenRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Roles::class);
+        parent::__construct($registry, Rapporten::class);
     }
 
     // /**
-    //  * @return Roles[] Returns an array of Roles objects
+    //  * @return Rapporten[] Returns an array of Rapporten objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class RolesRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Roles
+    public function findOneBySomeField($value): ?Rapporten
     {
         return $this->createQueryBuilder('r')
             ->andWhere('r.exampleField = :val')

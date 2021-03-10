@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rapporten index{% endblock %}
+
+{% block body %}
+    <h1>Rapporten index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Start_date</th>
+                <th>End_date</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for rapporten in rapportens %}
+            <tr>
+                <td>{{ rapporten.id }}</td>
+                <td>{{ rapporten.name }}</td>
+                <td>{{ rapporten.startDate ? rapporten.startDate|date('Y-m-d H:i:s T') : '' }}</td>
+                <td>{{ rapporten.endDate ? rapporten.endDate|date('Y-m-d H:i:s T') : '' }}</td>
+                <td>
+                    <a href="{{ path('rapporten_show', {'id': rapporten.id}) }}">show</a>
+                    <a href="{{ path('rapporten_edit', {'id': rapporten.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('rapporten_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rapporten{% endblock %}
+
+{% block body %}
+    <h1>Rapporten</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ rapporten.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ rapporten.name }}</td>
+            </tr>
+            <tr>
+                <th>Start_date</th>
+                <td>{{ rapporten.startDate ? rapporten.startDate|date('Y-m-d H:i:s T') : '' }}</td>
+            </tr>
+            <tr>
+                <th>End_date</th>
+                <td>{{ rapporten.endDate ? rapporten.endDate|date('Y-m-d H:i:s T') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('rapporten_index') }}">back to list</a>
+
+    <a href="{{ path('rapporten_edit', {'id': rapporten.id}) }}">edit</a>
+
+    {{ include('rapporten/_delete_form.html.twig') }}
+{% endblock %}
